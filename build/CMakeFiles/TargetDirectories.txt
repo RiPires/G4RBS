@@ -1,0 +1,4 @@
+/home/ripires/G4RBS/build/CMakeFiles/rebuild_cache.dir
+/home/ripires/G4RBS/build/CMakeFiles/edit_cache.dir
+/home/ripires/G4RBS/build/CMakeFiles/SimulationTest.dir
+/home/ripires/G4RBS/build/CMakeFiles/mainSim.dir

@@ -1,0 +1,22 @@
+/run/initialize
+
+/vis/open OGL
+
+/vis/viewer/set/viewpointVector 1 1 1
+/vis/drawVolume
+/vis/viewer/set/autoRefresh true
+
+/vis/geometry/set/colour LogicWorld 0 1 1 1 .1
+/vis/geometry/set/colour LogicCase 0 1 1 1 .2
+/vis/geometry/set/colour LogicTarget 0 0 1 0 .5
+/vis/geometry/set/colour LogicWindow 0 1 0 0 .5
+/vis/geometry/set/colour LogicDetector 0 1 1 1 .5
+
+/vis/viewer/set/style surface
+
+/vis/scene/add/trajectories smooth
+#/vis/scene/add/scale 10 cm
+/vis/scene/add/axes -10. -10. -10. 5 cm
+#/vis/scene/add/axes 0. 0. -5. 0.5 cm
+/vis/scene/add/eventID
+/vis/scene/endOfEventAction accumulate

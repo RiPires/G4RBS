@@ -26,19 +26,21 @@ public:
     
     virtual G4VPhysicalVolume *Construct();
     virtual void ConstructSDandField();
+
+     
     
 private:
     
-    ///G4double *xWorld, *yWorld, *zWorld; 
+    //G4double *xWorld, *yWorld, *zWorld;
     G4Box *solidWorld, *solidFrame;
-    G4Tubs *solidHole, *solidHolder, *solidTarget, *solidWindow, *solidDetector, *solidCase;
-    G4LogicalVolume  *logicTarget, *logicSubtraction, *logicWorld, *logicWindow, *logicDetector, *logicCase;
-    G4VPhysicalVolume *physHolder, *physTarget, *physSubtraction, *physWorld, *physWindow, *physDetector, *physCase;
+    G4Tubs *solidHole, *solidHolder, *solidTarget, *solidWindow, *solidDetector;
+    G4LogicalVolume  *logicTarget, *logicSubtraction, *logicWorld, *logicWindow, *logicDetector;
+    G4VPhysicalVolume *physHolder, *physTarget, *physSubtraction, *physWorld, *physWindow, *physDetector;
     
     G4GenericMessenger *fMessenger;
     
-    G4Material *SiO2, *H2O, *Epoxy, *Aerogel, *holderMat, *targetMat, *worldMat, *detMat, *silicon;
-    G4Element *Al, *C, *Ge, *Sn, *Si;
+    G4Material *holderMat, *targetMat, *worldMat, *detMat;
+    G4Element *Al, *Sn, *Si;
     
     void DefineMaterial();
     

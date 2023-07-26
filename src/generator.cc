@@ -9,7 +9,7 @@ MyPrimaryGenerator::MyPrimaryGenerator()
     G4String particleName="geantino"; // What we call to this geantino particle
     G4ParticleDefinition *particle = particleTable->FindParticle("geantino"); // Sets prim .particle as GEANTINO  ///
     
-    G4ThreeVector pos(0.,0.,-5.*mm); //  Position for particle gun
+    G4ThreeVector pos(0.,0.,-90.*mm); //  Position for particle gun
     G4ThreeVector mom(0.,0.,1.);     //  Momentum direction vector for prim. particle
     
     fParticleGun->SetParticlePosition(pos);          // Particle Position
@@ -24,8 +24,25 @@ MyPrimaryGenerator::~MyPrimaryGenerator()
 }
 
 
-///   Generate primary particle as a radioactive punctual source   ///
+///   *************   Generation of primary PROTONS   ***********   ///
 void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
+{   
+    G4ParticleDefinition *particle = fParticleGun->GetParticleDefinition();
+    if(particle == G4Geantino::Geantino())
+    {   
+        G4ParticleTable *particleTable = G4ParticleTable::GetParticleTable();
+        G4ParticleDefinition *proton = particleTable->FindParticle("proton");
+        fParticleGun->SetParticleMomentum(1.5*MeV);
+        fParticleGun->SetParticleDefinition(proton);
+    }
+
+    fParticleGun->GeneratePrimaryVertex(anEvent);
+}
+///   *********************************************************   ///
+
+
+///   Generate primary particle as a radioactive punctual source   ///
+/*void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
 {    
     G4ParticleDefinition *particle = fParticleGun->GetParticleDefinition();
     
@@ -49,7 +66,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
     }
 
     fParticleGun->GeneratePrimaryVertex(anEvent);
-}
+}*/
 ///    ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///
 
 
