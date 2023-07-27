@@ -19,7 +19,7 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
     static_cast<const MyDetectorConstruction*> (G4RunManager::GetRunManager()->GetUserDetectorConstruction());
 
     // Gets the scoring volume from the geometric construction
-    G4LogicalVolume *ScoringVolume =    detectorConstruction->GetScoringVolume();
+    G4LogicalVolume *ScoringVolume = detectorConstruction->GetScoringVolume();
     
     //
     if(volume != ScoringVolume) // If the 'volume' is not the SensitiveDetector  //  

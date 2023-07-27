@@ -32,7 +32,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
     {   
         G4ParticleTable *particleTable = G4ParticleTable::GetParticleTable();
         G4ParticleDefinition *proton = particleTable->FindParticle("proton");
-        fParticleGun->SetParticleMomentum(1.5*MeV);
+        fParticleGun->SetParticleMomentum(2.0*MeV);
         fParticleGun->SetParticleDefinition(proton);
     }
 
